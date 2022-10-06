@@ -1,5 +1,5 @@
-import connection from './connection';
+// import connection from './connection';
 
-export default class UserModel {
+// export default class UserModel {
 
-}
+// }
