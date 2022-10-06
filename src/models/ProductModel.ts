@@ -1,10 +1,16 @@
 import { RowDataPacket } from 'mysql2';
-import connection from './connection';
+import { Pool } from 'mysql2/promise';
 
 export default class ProductModel {
-  getAll = async () => {
+  connection: Pool;
+
+  constructor(connection: Pool) {
+    this.connection = connection;
+  }
+
+  async getAll() {
     const query = 'SELECT * FROM Trybesmith.Products';
-    const [products] = await connection.execute<RowDataPacket[]>(query);
+    const [products] = await this.connection.execute<RowDataPacket[]>(query);
     return products;
-  };
+  }
 }
