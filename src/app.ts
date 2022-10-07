@@ -1,10 +1,12 @@
 import express from 'express';
-import productsRouter from './routers/productsRouter';
+import productRouter from './routers/productRouter';
+import userRouter from './routers/userRouter';
 
 const app = express();
 
 app.use(express.json());
 
-app.use('/products', productsRouter);
+app.use('/products', productRouter);
+app.use('/users', userRouter);
 
 export default app;
