@@ -1,10 +1,9 @@
 import jwt from 'jsonwebtoken';
-import dotenv from 'dotenv';
 import UserModel from '../models/UserModel';
 import connection from '../models/connection';
 import { IUser } from '../interfaces';
 
-dotenv.config();
+const JWT_SECRET = 'secret';
 
 export default class UserService {
   userModel: UserModel;
@@ -16,7 +15,7 @@ export default class UserService {
   generateToken = (createdUser: IUser) => {
     const { id, username, classe, level } = createdUser;
     const payload = { id, username, classe, level };
-    return jwt.sign(payload, (process.env.JWT_SECRET || 'secret'));
+    return jwt.sign(payload, JWT_SECRET);
   };
 
   async create(newUser: IUser): Promise<string> {
