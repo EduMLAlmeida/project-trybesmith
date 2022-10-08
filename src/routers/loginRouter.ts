@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import LoginController from '../controllers/loginController';
 import loginValidateMiddleware from '../middlewares/loginValidateMiddleware';
+import 'express-async-errors';
 
 const router = Router();
 

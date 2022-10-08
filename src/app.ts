@@ -3,7 +3,6 @@ import productRouter from './routers/productRouter';
 import userRouter from './routers/userRouter';
 import loginRouter from './routers/loginRouter';
 import orderRouter from './routers/oderRouter';
-import 'express-async-errors';
 import httpErrorMiddleware from './middlewares/http.error.middleware';
 
 const app = express();

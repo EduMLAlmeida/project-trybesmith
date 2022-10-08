@@ -27,7 +27,8 @@ export default class LoginService {
     const resultUser = await this.loginModel.getUser(user);
 
     if (resultUser.length === 0) {
-      throw new HttpException(400, 'Email or password is missing');
+      console.log('-------------------------------------------------------------------');
+      throw new HttpException(401, 'Username or password invalid');
     }
 
     return this.generateToken(resultUser[0]);
