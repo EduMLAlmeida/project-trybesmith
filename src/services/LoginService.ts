@@ -27,7 +27,6 @@ export default class LoginService {
     const resultUser = await this.loginModel.getUser(user);
 
     if (resultUser.length === 0) {
-      console.log('-------------------------------------------------------------------');
       throw new HttpException(401, 'Username or password invalid');
     }
 

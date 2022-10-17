@@ -13,4 +13,9 @@ export default class OrderService {
     const orders: Array<IOrder> = await this.orderModel.getAll();
     return orders;
   }
+
+  async create(newOrder: IOrder): Promise<IOrder> {
+    const createdOrder: IOrder = await this.orderModel.create(newOrder);
+    return createdOrder;
+  }
 }
